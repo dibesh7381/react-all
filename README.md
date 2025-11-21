@@ -19,23 +19,25 @@
 
 ## Private Router
 - const PrivateRoute = ({ children }) => {
-- const isLoggedIn = localStorage.getItem("token");
-- return isLoggedIn ? children : <Navigate to="/login" />; };
-- <Route path="/dashboard" element={ <PrivateRoute> <Dashboard /> </PrivateRoute> }/>
+-   const isLoggedIn = localStorage.getItem("token");
+-   return isLoggedIn ? children : <Navigate to="/login" />;
+- };
+- <Route path="/dashboard" element={ <PrivateRoute> <Dashboard /> </PrivateRoute> } />
 
 ## Role Based Router
 - import { Navigate } from "react-router-dom";
 - import { jwtDecode } from "jwt-decode";
 - const RoleRoute = ({ children, role }) => {
-- const token = localStorage.getItem("token");
-- const decoded = jwtDecode(token);
-- return decoded.role === role ? children : <Navigate to="/not-authorized" />; };
+-   const token = localStorage.getItem("token");
+-   const decoded = jwtDecode(token);
+-   return decoded.role === role ? children : <Navigate to="/not-authorized" />;
+- };
 - export default RoleRoute;
-- <Route path="/customer-dashboard" element={ <RoleRoute role="customer">  <CustomerDashboard /> </RoleRoute> } />
-
+- <Route path="/customer-dashboard" element={ <RoleRoute role="customer"> <CustomerDashboard /> </RoleRoute> } />
 
 ## Dynamic Router
 - <Route path="/user/:id" element={<UserPage />} />
-- in the components we use const { id } = useParams();
+- In the component we use: const { id } = useParams();
 - :id is called dynamic parameter
+
 
