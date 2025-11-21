@@ -39,6 +39,25 @@
 - `const { id } = useParams();`
 - `:id` is called **dynamic parameter**
 
+## Redireact 
+- We use useNavigate() hooks for navigate
+- used in component `const navigate = useNavigate();`
+- `const handleLogin = async () => {
+    const res = await fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.token) {
+      localStorage.setItem("token", data.token);
+
+      // 🔥 Redirect to Dashboard after successful login
+      navigate("/dashboard");`
+    }
+
 ---
 
 
