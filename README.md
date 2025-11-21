@@ -60,4 +60,37 @@
 
 ---
 
+# React Folder Structure
+
+- inside `components` folder we keep our reusable components  
+  like navbar, cards, footer, buttons etc
+
+- inside `pages` folder we keep the components  
+  which are visible in the webpage like home page, about page, contact page, login page, signup page
+
+- inside `routes` folder we keep route-related files  
+  like PrivateRoute, RoleRoute etc
+
+- inside `assets` folder we keep images, icons, logos, videos etc
+
+- inside `utils` folder we keep helper functions  
+  like token helpers, formatters, validators etc
+
+- inside `services` folder we keep API calling functions  
+  like authService, userService etc
+
+- inside `context` folder we keep global context providers  
+  like AuthContext, ThemeContext etc
+
+- inside `redux` folder we keep redux toolkit files  
+  - `store.js` → main redux store  
+  - inside `slices` folder we keep slice files  
+      like `userSlice.js`, `cartSlice.js`, `authSlice.js`
+
+- `App.jsx` contains all the routes of the application
+
+- `main.jsx` injects the App component into the DOM
+
+---
+
 
